@@ -23,17 +23,7 @@ class Drugbank:
             self.X.append(my_dict)
         return self.X
 
-    def normal_pathway(self,file2):
-        self.X2=[]
-        self.all2=[]
-        for line in self.file2:
-            line=line.rstrip()
-            self.all2.append(line)
-        for i in range(214):
-            my_dict = ast.literal_eval(self.all2[i])
-            self.X2.append(my_dict)
-
-        return self.X2
+ 
     def transformer(self,x,y):
 
         pipe = Pipeline([
@@ -61,5 +51,4 @@ if __name__ == "__main__":
     file = open("pathwaying", "r")
     file2 = open("normal_pathway", "r")
     bank=Drugbank(file,file2)
-    bank.pathway(file)
-    bank.transformer(bank.normal_pathway(file2),y)
+    bank.transformer(bank.pathway(file2),y)
