@@ -9,7 +9,7 @@ le=LabelEncoder()
 X, y = SkUtilsIO('BC.csv').from_csv(
     label_column='stage')
 y = ['healthy' if i == 'h' else  'bc' for i in y]
-#X_visceral, y_visceral = filter_by_label(X, y, 'bc', reverse=True)
+
 pre=  MetaboliticsPipeline([
         'metabolite-name-mapping',
         'standard-scaler',
