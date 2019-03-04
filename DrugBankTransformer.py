@@ -15,7 +15,7 @@ class Drugbank:
     def pathway(self,file):
         self.X=[]
         self.all=[]
-        for line in self.file:
+        for line in file:
             line = line.rstrip()
             self.all.append(line)
         for i in range(214):
